@@ -33,7 +33,7 @@ start() {
     fi
 
     echo -n "Starting Xvfb..."
-    su $user -c "$xvfb $screen_options -nolisten tcp >$std_log 2>$error_log &"
+    su $user -c "$xvfb $screen_options -nolisten tcp +extension RANDR >$std_log 2>$error_log &"
 
     if [ $? == "0" ]; then
         success
